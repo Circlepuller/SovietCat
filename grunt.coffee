@@ -52,3 +52,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-handlebars"
   grunt.loadNpmTasks "grunt-contrib-less"
+  
+  grunt.registerTask "default", "coffee handlebars less reload watch"

@@ -1,0 +1,14 @@
+{
+  "name": "sovietcat",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": ">= 1.4.0"
+  },
+  "devDependencies": {
+    "grunt": ">= 0.3.17",
+    "grunt-contrib-coffee": ">= 0.3.2",
+    "grunt-contrib-handlebars": ">= 0.3.3",
+    "grunt-contrib-less": ">= 0.3.2",
+    "grunt-reload": ">= 0.2.0"
+  }
+}
