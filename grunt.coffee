@@ -11,7 +11,8 @@ module.exports = (grunt) ->
 
     handlebars:
       compile:
-        files:
+        files: // I don't know what to put here D:
+
     less:
       development:
         files:
