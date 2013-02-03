@@ -3,7 +3,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          "public/js/modules/*.js": "src/coffee/**/*.coffee"
+          "public/js/*.js": "src/coffee/**/*.coffee"
 
         options:
           flatten: false
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
     handlebars:
       compile:
         files:
-          "public/js/*.js": "src/handlebars/**/*.hbs"
+          "public/js/tmpl/*.js": "src/handlebars/**/*.hbs"
 
     less:
       development:
