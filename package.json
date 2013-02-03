@@ -1,14 +1,38 @@
 {
   "name": "sovietcat",
-  "version": "0.0.1",
-  "dependencies": {
-    "coffee-script": ">= 1.4.0"
-  },
-  "devDependencies": {
-    "grunt": ">= 0.3.17",
-    "grunt-contrib-coffee": ">= 0.3.2",
-    "grunt-contrib-handlebars": ">= 0.3.3",
-    "grunt-contrib-less": ">= 0.3.2",
-    "grunt-reload": ">= 0.2.0"
-  }
+	"version": "0.0.1",
+	"author": "Circlepuller <admin@awsumchan.org>",
+	"decription": "No description right now.",
+	"contributors": [
+		{
+			"name": "Dan Saunders",
+			"email": "dsaunders@dansaunders.me"
+		},
+		{
+			"name": "Riku Rouvila",
+			"email": "riku.rouvila@gmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Circlepuller/SovietCat.git"
+	},
+	"keywords": [
+		"sovietcat",
+		"soviet",
+		"cat",
+		"network"
+	],
+	"dependencies": {
+		"coffee-script": "1.4.x",
+		"express": "3.1.x",
+		"grunt": "0.3.x",
+		"grunt-contrib-coffee": "0.3.x",
+		"grunt-contrib-handlebars": "0.3.x",
+		"grunt-contrib-less": "0.3.x",
+		"mongoose": "3.5.x"
+	},
+	"engines": {
+		"node": ">= 0.6"
+	}
 }
