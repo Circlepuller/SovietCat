@@ -54,6 +54,7 @@ module.exports = (grunt) ->
         tasks: ["server"]
 
   grunt.loadNpmTasks "grunt-reload"
+  grunt.loadNpmTasks "grunt-shell"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-handlebars"
   grunt.loadNpmTasks "grunt-contrib-less"
