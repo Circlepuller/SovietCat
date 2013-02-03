@@ -9,10 +9,11 @@ module.exports = (grunt) ->
           flatten: false
           bare: false
 
+    # This could be relatively interesting.
     handlebars:
       compile:
         files:
-          # I don't know what to put here D:
+          "public/js/*.js": "src/handlebars/**/*.hbs"
 
     less:
       development:
