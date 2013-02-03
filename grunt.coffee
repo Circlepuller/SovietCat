@@ -40,18 +40,22 @@ module.exports = (grunt) ->
       coffee:
         files: ["src/coffee/**/*.coffee"]
         tasks: ["coffee", "reload"]
-        
+
       handlebars:
         files: ["src/handlebars/*.hbs"]
         tasks: ["handlebars", "reload"]
-        
+
       less:
         files: ["src/less/*.less"]
         tasks: ["less", "reload"]
+
+      server:
+        files: ["src/server/*.coffee"]
+        tasks: ["server"]
 
   grunt.loadNpmTasks "grunt-reload"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-handlebars"
   grunt.loadNpmTasks "grunt-contrib-less"
-  
+
   grunt.registerTask "default", "coffee handlebars less reload watch"
