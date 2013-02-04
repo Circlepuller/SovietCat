@@ -15,6 +15,9 @@ module.exports = (grunt) ->
         files:
           'public/js/tmpl/': 'src/handlebars/**/*.hbs'
 
+        options:
+          srcroot: 'src/handlebars/'
+
     less:
       development:
         files:
@@ -45,9 +48,9 @@ module.exports = (grunt) ->
         files: ['src/coffee/**/*.coffee']
         tasks: ['coffee', 'reload']
 
-      handlebars:
+      handlebars_requirejs:
         files: ['src/handlebars/**/*.hbs']
-        tasks: ['handlebars', 'reload']
+        tasks: ['handlebars_requirejs', 'reload']
 
       less:
         files: ['src/less/*.less']
