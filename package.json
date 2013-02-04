@@ -29,8 +29,8 @@
 		"express": "3.1.x",
 		"grunt": ">= 0.3.x",
 		"grunt-contrib-coffee": ">= 0.3.x",
-		"grunt-contrib-handlebars": ">= 0.3.x",
 		"grunt-contrib-less": ">= 0.3.x",
+		"grunt-handlebars-requirejs": ">= 0.0.x",
 		"grunt-reload": ">= 0.2.x",
 		"grunt-shell": "0.1.x",
 		"mongoose": "3.5.x"
