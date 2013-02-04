@@ -10,11 +10,10 @@ module.exports = (grunt) ->
           flatten: false
           bare: false
 
-    handlebars:
+    jade:
       compile:
         files:
-          'public/js/tmpl/index.js': 'src/handlebars/index.hbs'
-
+          "public/index.html": "src/jade/index.jade"
     less:
       development:
         files:
@@ -44,9 +43,9 @@ module.exports = (grunt) ->
         files: ['src/coffee/**/*.coffee']
         tasks: ['coffee', 'reload']
 
-      handlebars:
-        files: ['src/handlebars/*.hbs']
-        tasks: ['handlebars', 'reload']
+      jade:
+        files: ["src/jade/*.jade"]
+        tasks: ["jade", "reload"]
 
       less:
         files: ['src/less/*.less']
@@ -59,7 +58,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-reload'
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-handlebars'
+  grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks 'grunt-contrib-less'
 
   # grunt.registerTask 'server', () ->
@@ -78,5 +77,5 @@ module.exports = (grunt) ->
   #     else
   #       execServer()
 
-  grunt.registerTask 'default', 'coffee handlebars less reload server watch'
-  grunt.registerTask 'compile', 'coffee handlebars less'
+  grunt.registerTask 'default', 'coffee jade less reload server watch'
+  grunt.registerTask 'compile', 'coffee jade less'
