@@ -10,10 +10,10 @@ module.exports = (grunt) ->
           flatten: false
           bare: false
 
-    handlebars_requirejs:
-      basic:
+    handlebars:
+      compile:
         files:
-          'public/js/tmpl/': 'src/handlebars/**/*.hbs'
+          'public/js/tmpl.js': 'src/handlebars/**/*.hbs'
 
     less:
       development:
@@ -60,8 +60,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-reload'
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-handlebars'
   grunt.loadNpmTasks 'grunt-contrib-less'
-  grunt.loadNpmTasks 'grunt-handlebars-requirejs'
 
   # grunt.registerTask 'server', () ->
   #   execServer = () ->
