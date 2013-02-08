@@ -6,6 +6,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'public/js/*.js': 'src/coffee/**/*.coffee'
+
         options:
           flatten: false
           bare: false
@@ -13,7 +14,8 @@ module.exports = (grunt) ->
     jade:
       compile:
         files:
-          "public/index.html": "src/jade/index.jade"
+          'public/index.html': 'src/jade/index.jade'
+
     less:
       development:
         files:

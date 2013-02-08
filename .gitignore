@@ -1,2 +1,33 @@
+# Stupid repo folders
+.hg
+.svn
+.CVS
+.idea
 node_modules
+dist
+
+# Ugly hideous files
+*.diff
+*.err
+*.orig
 *.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+*.sass-cacje
+
+# Horrifying OS files and folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
