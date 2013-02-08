@@ -6,7 +6,6 @@ module.exports = (grunt) ->
       compile:
         files:
           'public/js/*.js': 'src/coffee/**/*.coffee'
-
         options:
           flatten: false
           bare: false
@@ -15,6 +14,9 @@ module.exports = (grunt) ->
       basic:
         files:
           'public/js/tmpl/': 'src/handlebars/**/*.hbs'
+
+        options:
+          srcroot: 'src/handlebars/'
 
     less:
       development:
