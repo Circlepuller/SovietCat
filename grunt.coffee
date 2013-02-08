@@ -79,5 +79,5 @@ module.exports = (grunt) ->
   #     else
   #       execServer()
 
-  grunt.registerTask 'default', 'coffee handlebars_requirejs less reload server watch'
-  grunt.registerTask 'compile', 'coffee handlebars_requirejs less'
+  grunt.registerTask 'default', 'coffee handlebars less reload server watch'
+  grunt.registerTask 'compile', 'coffee handlebars less'
