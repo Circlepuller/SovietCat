@@ -1,7 +1,19 @@
 doctype 5
 html(ng-app)
   head
+    meta(charset='utf-8')
     title SovietCat Network
+
+  body(ng-controller='TestCtrl')
+    h1 Hello Soviet!
+    ul
+      li(ng-repeat='soviet in soviets | filter:sovietOmit') {{soviet}}
+
+    input(type='text', placeholder='Enter filter here', ng-model='sovietOmit')
+    form(ng-submit='addSoviet()')
+      input(type='text', placeholder='Enter name here', ng-model='sovietText')
+      input(type='submit', value='Add')
+
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js')
     script(type='text/javascript')
@@ -14,13 +26,3 @@ html(ng-app)
           $scope.sovietText = '';
         };
       }
-
-  body(ng-controller='TestCtrl')
-    h1 Hello Soviet!
-    ul
-      li(ng-repeat='soviet in soviets | filter:sovietOmit')
-        {{soviet}}
-    input(type='text', placeholder='Enter filter here', ng-model='sovietOmit')
-    form(ng-submit='addSoviet()')
-      input(type='text', placeholder='Enter name here', ng-model='sovietText')
-      input(type='submit', value='Add')
