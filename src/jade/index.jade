@@ -6,7 +6,7 @@ html(ng-app)
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js')
     script(type='text/javascript')
       function TestCtrl($scope) {
-        $scope.soviets = {};
+        $scope.soviets = [];
 
         $scope.addSoviet = function() {
           $scope.soviets.push($scope.sovietText);
