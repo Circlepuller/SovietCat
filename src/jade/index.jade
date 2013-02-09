@@ -9,10 +9,7 @@ html(ng-app)
         $scope.soviets = {};
 
         $scope.addSoviet = function() {
-          $scope.soviets.push({
-            text: $scope.sovietText,
-            done: false
-          });
+          $scope.soviets.push($scope.sovietText);
 
           $scope.sovietText = '';
         };
