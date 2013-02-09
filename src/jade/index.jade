@@ -4,8 +4,25 @@ html(ng-app)
     title SovietCat Network
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js')
+    script(type='text/javascript')
+    	function TestCtrl($scope) {
+        $scope.soviets = {};
 
-  body
-    h1 Hello Soviet {{soviet}}!
-    p We'll be up soon!
-    input(type='text', placeholder='Enter your name here', ng-model='soviet')
+        $scope.addSoviet = function() {
+          $scope.soviets.push({
+            text: $scope.sovietText,
+            done: false
+          });
+
+          $scope.sovietText = '';
+        };
+      }
+
+  body(ng-controller='TestCtrl')
+    h1 Hello Soviet!
+    ul
+      li(ng-repeat='soviet in soviets')
+        {{soviet}}
+    form(ng-submit='addSoviet()')
+      input(type='text', placeholder='Enter name here', ng-model='sovietText')
+      input(type='submit', value='Add')
