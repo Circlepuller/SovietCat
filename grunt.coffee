@@ -15,6 +15,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'public/index.html': 'src/jade/index.jade'
+          'public/partials/test.html': 'src/jade/partials/test.jade'
 
     less:
       development:
@@ -46,8 +47,8 @@ module.exports = (grunt) ->
         tasks: ['coffee', 'reload']
 
       jade:
-        files: ["src/jade/*.jade"]
-        tasks: ["jade", "reload"]
+        files: ['src/jade/**/*.jade']
+        tasks: ['jade', 'reload']
 
       less:
         files: ['src/less/*.less']
@@ -60,7 +61,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-reload'
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks "grunt-contrib-jade"
+  grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-less'
 
   # grunt.registerTask 'server', () ->
