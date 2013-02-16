@@ -9,7 +9,7 @@ module.exports = (grunt) ->
 
         options:
           flatten: false
-          bare: false
+          bare: true # This is causing serious issues when set to "false"
 
     jade:
       compile:
