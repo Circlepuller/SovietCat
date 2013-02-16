@@ -5,8 +5,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'public/js/app.js': 'src/coffee/app.coffee'
-          'public/js/controllers.js': 'src/coffee/controllers.coffee'
+          'public/js/*.js': 'src/coffee/**/*.coffee'
 
         options:
           flatten: false
