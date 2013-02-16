@@ -1,5 +1,5 @@
 angular.module('SovietCat', [])
-  .config(['$routeProvider', () ->
+  .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when('/test',
         templateUrl: 'partials/test.html',
