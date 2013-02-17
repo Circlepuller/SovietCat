@@ -35,7 +35,7 @@
 		"grunt-reload": ">= 0.2.x",
 		"grunt-shell": "0.1.x",
 		"mongoose": "3.5.x",
-		"yaml-js": "0.0.x"
+		"js-yaml": "2.0.x"
 	},
 	"engines": {
 		"node": ">= 0.6"
