@@ -16,7 +16,7 @@ module.exports.createServer = (config) ->
   return [
     http.createServer app
     https.createServer
-      key: fs.readFileSync config.__dirname + config.key
-      cert: fs.readFileSync config.__dirname + config.cert
+      key: fs.readFileSync "#{config.__dirname}/#{config.key}"
+      cert: fs.readFileSync "#{config.__dirname}/#{config.cert}"
     , app
   ]
