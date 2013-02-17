@@ -13,7 +13,10 @@ module.exports.createServer = (config) ->
   app.set 'view engine', 'jade'
   app.use app.router # routes.coffee should be created before running this file!
 
-  return (http.createServer app), https.createServer
-    key: fs.readFileSync config.__dir + config.key
-    cert: fs.readFileSync config.__dir + config.cert
-  , app
+  return [
+    http.createServer app
+    https.createServer
+      key: fs.readFileSync config.__dir + config.key
+      cert: fs.readFileSync config.__dir + config.cert
+    , app
+  ]

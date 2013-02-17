@@ -10,7 +10,7 @@ catch e
 
 config.__dir = __dir
 
-(http, https) = server.createServer(config)
+[http, https] = server.createServer(config)
 
 http.listen 8001
 https.listen 8002
