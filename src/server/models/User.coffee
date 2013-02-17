@@ -4,6 +4,7 @@ mongoose = require 'mongoose'
 UserSchema = new mongoose.Schema
   name:
     type: String
+    default: ''
     trim: true
 
   email:
@@ -18,9 +19,13 @@ UserSchema = new mongoose.Schema
       bcrypt.hashSync password, bcrypt.genSaltSync 32
 
   created: Date
+  active: Date
+  activated:
+    type: Boolean
+    default: false
 
 UserSchema.path('name').validate (name) ->
-  name.length
+  name.length and @activated
 , 'Name cannot be blank'
 
 UserSchema.path('email').validate (email) ->
@@ -28,7 +33,7 @@ UserSchema.path('email').validate (email) ->
 , 'Email cannot be blank'
 
 UserSchema.path('password').validate (password) ->
-  password.length
+  password.length and @activated
 , 'Password cannot be blank'
 
 mongoose.model 'User', UserSchema
