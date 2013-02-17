@@ -1,2 +1,13 @@
-key: key.pem
-cert: cert.pem
+http:
+  port: 8001
+
+https:
+  port: 8002
+  key: key.pem
+  cert: cert.pem
+
+db:
+  username: ''
+  password: ''
+  host: localhost
+  port: 27017

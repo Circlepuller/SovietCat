@@ -2,6 +2,6 @@ TestCtrl = ($scope) ->
   $scope.soviets = []
 
   $scope.addSoviet = () ->
-    $scope.soviets.push($scope.sovietText)
+    $scope.soviets.push $scope.sovietText
 
-    $scope.sovietText = '';
+    $scope.sovietText = ''

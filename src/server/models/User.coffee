@@ -40,3 +40,8 @@ mongoose.model 'User', UserSchema
 
 # Eventually, we need to make this suited for invite based registration.
 # It's also unfinished.
+
+#conn = mongoose.createConnection()
+#conn.open 'localhost', 'test', 27017, () ->
+#conn.db
+#mongoose.mongo.GridStore

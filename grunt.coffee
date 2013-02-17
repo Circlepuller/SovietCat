@@ -1,4 +1,4 @@
-# child_process = require 'child_process'
+child_process = require 'child_process'
 
 module.exports = (grunt) ->
   grunt.initConfig
@@ -38,9 +38,10 @@ module.exports = (grunt) ->
         host: 'localhost'
         port: 8001
 
-    server:
-      port: 8001
-      base: 'public'
+    # Static file server
+    #server:
+    #  port: 8001
+    #  base: 'public'
 
     watch:
       coffee:
@@ -65,21 +66,21 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-less'
 
-  # grunt.registerTask 'server', () ->
-  #   execServer = () ->
-  #     exec = 'node_modules/coffee-script/bin/coffee'
-  #     exec = __dirname + '/node_modules/.bin/coffee.cmd' if process.platform is 'win32'
+  grunt.registerTask 'server', () ->
+    execServer = () ->
+      exec = 'node_modules/coffee-script/bin/coffee'
+      exec = __dirname + '/node_modules/.bin/coffee.cmd' if process.platform is 'win32'
 
-  #     serverProc = child_process.spawn exec, ['runserver.coffee'],
-  #       stdio: 'inherit'
+      serverProc = child_process.spawn exec, ['runserver.coffee'],
+        stdio: 'inherit'
 
-  #     if serverProc?
-  #       console.log 'Trying to kill old server...'
-  #       serverProc.on 'close', execServer
-  #       serverProc.kill()
+      if serverProc?
+        console.log 'Trying to kill old server...'
+        serverProc.on 'close', execServer
+        serverProc.kill()
 
-  #     else
-  #       execServer()
+      else
+        execServer()
 
   grunt.registerTask 'default', 'coffee jade less reload server watch'
   grunt.registerTask 'compile', 'coffee jade less'

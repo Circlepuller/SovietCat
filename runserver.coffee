@@ -1,4 +1,5 @@
 require 'js-yaml'
+mongoose = require 'mongoose'
 server = require './src/server/server'
 
 try
@@ -10,7 +11,13 @@ catch e
 
 config.__dirname = __dirname
 
-[http, https] = server.createServer(config)
+if config.db.username and config.db.password
+  db = mongoose.createConnection "mongodb://#{config.db.username}:#{config.db.password}@#{config.db.host}:#{config.db.port}/#{config.db.database}"
 
-http.listen 8001
-https.listen 8002
+else
+  db = mongoose.createConnection "mongodb://#{config.db.host}:#{config.db.port}/#{config.db.database}"
+
+[http, https] = server.createServer config, db
+
+http.listen config.http.port
+https.listen config.https.port

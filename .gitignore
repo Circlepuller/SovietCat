@@ -32,5 +32,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 
-# Extra stuff
+# HTTPS/SSL Certificates
+*.crt
+*.key
 *.pem

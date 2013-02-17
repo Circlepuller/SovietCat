@@ -16,8 +16,8 @@ ArticleSchema = new mongoose.Schema
 
   tags:
     type: Array
-    get: (tags) -> tags.join(',')
-    set: (tags) -> tags.split(',')
+    get: (tags) -> tags.join ','
+    set: (tags) -> tags.split ','
 
   comments: [
     user:
