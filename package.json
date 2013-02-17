@@ -26,6 +26,7 @@
 	"dependencies": {
 		"bcrypt": "0.7.x",
 		"coffee-script": "1.4.x",
+		"connect-mongo": "0.3.x",
 		"express": "3.1.x",
 		"grunt": ">= 0.3.x",
 		"grunt-contrib-coffee": ">= 0.3.x",
@@ -33,7 +34,8 @@
 		"grunt-contrib-jade": ">= 0.3.x",
 		"grunt-reload": ">= 0.2.x",
 		"grunt-shell": "0.1.x",
-		"mongoose": "3.5.x"
+		"mongoose": "3.5.x",
+		"yaml-js": "2.0.x"
 	},
 	"engines": {
 		"node": ">= 0.6"

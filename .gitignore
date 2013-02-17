@@ -31,3 +31,6 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
+
+# Extra stuff
+*.pem
