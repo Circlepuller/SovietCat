@@ -81,7 +81,5 @@ module.exports = (grunt) ->
       else
         execServer()
 
-    execServer()
-
   grunt.registerTask 'default', 'coffee jade less reload server watch'
   grunt.registerTask 'compile', 'coffee jade less'
