@@ -8,7 +8,7 @@ catch e
   console.error "#{e.name}: #{e.message}"
   process.exit 1
 
-config.__dir = __dir
+config.__dirname = __dirname
 
 [http, https] = server.createServer(config)
 
