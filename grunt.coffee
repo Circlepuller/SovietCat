@@ -68,7 +68,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'server', () ->
     execServer = () ->
       exec = 'node_modules/coffee-script/bin/coffee'
-      exec = __dirname + '/node_modules/.bin/coffee.cmd' if process.platform is 'win32'
+      exec = "#{__dirname}/#{exec}.cmd" if process.platform is 'win32'
 
       serverProc = child_process.spawn exec, ['runserver.coffee'],
         stdio: 'inherit'
@@ -80,6 +80,8 @@ module.exports = (grunt) ->
 
       else
         execServer()
+
+    execServer()
 
   grunt.registerTask 'default', 'coffee jade less reload server watch'
   grunt.registerTask 'compile', 'coffee jade less'
