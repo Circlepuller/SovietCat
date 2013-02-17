@@ -38,10 +38,9 @@ module.exports = (grunt) ->
         host: 'localhost'
         port: 8001
 
-    # Static file server
-    #server:
-    #  port: 8001
-    #  base: 'public'
+    server:
+      port: 8001
+      base: 'public'
 
     watch:
       coffee:
