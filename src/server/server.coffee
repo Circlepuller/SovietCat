@@ -1,4 +1,4 @@
-#connect_mongo = require 'connect_mongo'
+connect_mongo = require 'connect_mongo'
 express = require 'express'
 fs = require 'fs'
 http = require 'http'
@@ -13,22 +13,26 @@ module.exports.createServer = (config, db) ->
   app.use express.logger()
   app.use express.compress()
   app.use express.bodyParser()
-  app.use express.cookieParser()
+
+  app.use express.cookieParser config.secret
+  app.use express.session
+    secret: config.secret
+    store: new connect_mongo
+      db: db.db
+
   app.use express.methodOverride()
   app.use express.responseTime()
 
-  app.use express.cache() # Can greatly improve performance at expense of memory
   app.use express.static "#{config.__dirname}/public"
-
   app.use express.favicon()
 
   app.configure 'development', () ->
-    app.use express.errorHandler
-      dumpExceptions: true
-      showStack: true
+  app.use express.errorHandler
+    dumpExceptions: true
+    showStack: true
 
   app.configure 'production', () ->
-    app.use express.errorHandler()
+  app.use express.errorHandler()
 
   app.use app.router # routes.coffee should be created before running this file!
 

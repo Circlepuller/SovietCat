@@ -1,3 +1,5 @@
+secret: kittens
+
 http:
   port: 8001
 
