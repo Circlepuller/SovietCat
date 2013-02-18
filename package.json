@@ -1,43 +1,42 @@
 {
   "name": "sovietcat",
-	"version": "0.0.1",
-	"author": "Circlepuller <admin@awsumchan.org>",
-	"decription": "No description right now.",
-	"contributors": [
-		{
-			"name": "Dan Saunders",
-			"email": "dsaunders@dansaunders.me"
-		},
-		{
-			"name": "Riku Rouvila",
-			"email": "riku.rouvila@gmail.com"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Circlepuller/SovietCat.git"
-	},
-	"keywords": [
-		"sovietcat",
-		"soviet",
-		"cat",
-		"network"
-	],
-	"dependencies": {
-		"bcrypt": "0.7.x",
-		"coffee-script": "1.4.x",
-		"connect-mongo": "0.3.x",
-		"express": "3.1.x",
-		"grunt": ">= 0.3.x",
-		"grunt-contrib-coffee": ">= 0.3.x",
-		"grunt-contrib-less": ">= 0.3.x",
-		"grunt-contrib-jade": ">= 0.3.x",
-		"grunt-reload": ">= 0.2.x",
-		"grunt-shell": "0.1.x",
-		"mongoose": "3.5.x",
-		"js-yaml": "2.0.x"
-	},
-	"engines": {
-		"node": ">= 0.6"
-	}
+  "version": "0.0.1",
+  "author": "Circlepuller <admin@awsumchan.org>",
+  "decription": "No description right now.",
+  "contributors": [
+    {
+      "name": "Dan Saunders",
+      "email": "dsaunders@dansaunders.me"
+    },
+    {
+      "name": "Riku Rouvila",
+      "email": "riku.rouvila@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Circlepuller/SovietCat.git"
+  },
+  "keywords": [
+    "sovietcat",
+    "soviet",
+    "cat",
+    "network"
+  ],
+  "dependencies": {
+    "bcrypt": "0.7.x",
+    "coffee-script": "1.4.x",
+    "express": "3.1.x",
+    "grunt": ">= 0.3.x",
+    "grunt-contrib-coffee": ">= 0.3.x",
+    "grunt-contrib-less": ">= 0.3.x",
+    "grunt-contrib-jade": ">= 0.3.x",
+    "grunt-reload": ">= 0.2.x",
+    "grunt-shell": "0.1.x",
+    "mongoose": "3.5.x",
+    "js-yaml": "2.0.x"
+  },
+  "engines": {
+    "node": ">= 0.6"
+  }
 }
