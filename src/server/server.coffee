@@ -1,4 +1,4 @@
-connect_mongo = require 'connect_mongo'
+connect_mongo = require 'connect-mongo'
 express = require 'express'
 fs = require 'fs'
 http = require 'http'
