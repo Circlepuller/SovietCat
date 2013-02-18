@@ -17,7 +17,7 @@ module.exports.createServer = (config, db) ->
   app.use express.methodOverride()
   app.use express.responseTime()
 
-  app.use express.staticCache # Can greatly improve performance at expense of memory
+  app.use express.staticCache() # Can greatly improve performance at expense of memory
   app.use express.static "#{config.__dirname}/public"
 
   app.use express.favicon()
