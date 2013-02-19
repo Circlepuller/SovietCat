@@ -5,10 +5,11 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'public/js/*.js': 'src/coffee/**/*.coffee'
+          'public/js/main.js': 'src/coffee/**/*.coffee'
 
         options:
           bare: true # This is causing serious issues when set to "false"
+          separator: '/* compiled from coffeescript */'
 
     jade:
       compile:
