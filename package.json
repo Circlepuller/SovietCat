@@ -28,7 +28,7 @@
     "coffee-script": "1.4.x",
     "express": "3.1.x",
     "grunt": ">= 0.3.x",
-    "grunt-contrib-coffee": "0.3.2",
+    "grunt-contrib-coffee": ">= 0.3.x",
     "grunt-contrib-less": ">= 0.3.x",
     "grunt-contrib-jade": ">= 0.3.x",
     "grunt-reload": ">= 0.2.x",
