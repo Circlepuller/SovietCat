@@ -5,11 +5,10 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'public/js/main.js': 'src/coffee/**/*.coffee'
+          'public/js/sovietcat.js': 'src/coffee/**/*.coffee'
 
         options:
           bare: true # This is causing serious issues when set to "false"
-          separator: '/* compiled from coffeescript */'
 
     jade:
       compile:
@@ -20,17 +19,19 @@ module.exports = (grunt) ->
     less:
       development:
         files:
-          'public/css/*.css': 'src/less/*.less'
-
-        options:
-          compress: true
+          'public/css/sovietcat.css': 'src/less/**/*.less'
 
       production:
         files:
-          'public/css/*.css': 'src/less/*.less'
+          'public/css/sovietcat.min.css': 'src/less/**/*.less'
 
         options:
           compress: true
+
+    uglify:
+      sovietcat:
+        files:
+          'public/sovietcat.min.js': ['src/sovietcat.js']
 
     reload:
       port: 6001
@@ -48,11 +49,15 @@ module.exports = (grunt) ->
         tasks: ['jade', 'reload']
 
       less:
-        files: ['src/less/*.less']
+        files: ['src/less/**/*.less']
         tasks: ['less', 'reload']
 
+      uglify:
+        files: ['public/js/**/*.js']
+        tasks: ['uglify', 'reload']
+
       server:
-        files: ['src/server/*.coffee']
+        files: ['src/server/**/*.coffee']
         tasks: ['server']
 
   grunt.loadNpmTasks 'grunt-reload'
@@ -60,6 +65,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.registerTask 'server', () ->
@@ -78,5 +84,5 @@ module.exports = (grunt) ->
       else
         execServer()
 
-  grunt.registerTask 'default', ['coffee', 'jade', 'less', 'reload', 'server', 'watch']
-  grunt.registerTask 'compile', ['coffee', 'jade', 'less']
+  grunt.registerTask 'default', ['coffee', 'jade', 'less', 'uglify', 'reload', 'server', 'watch']
+  grunt.registerTask 'compile', ['coffee', 'jade', 'less', 'uglify']
