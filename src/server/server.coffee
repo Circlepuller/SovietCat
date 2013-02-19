@@ -21,6 +21,8 @@ module.exports.createServer = (config, db) ->
       httpOnly: false
       maxAge: 60 * 60 * 24 * 365
 
+  app.use express.csrf()
+
   app.use express.methodOverride()
   app.use express.responseTime()
 
