@@ -27,16 +27,17 @@
     "bcrypt": "0.7.x",
     "coffee-script": "1.4.x",
     "express": "3.1.x",
-    "grunt": ">= 0.3.x",
-    "grunt-contrib-coffee": ">= 0.3.x",
-    "grunt-contrib-less": ">= 0.3.x",
-    "grunt-contrib-jade": ">= 0.3.x",
+    "grunt": ">= 0.4.x",
+    "grunt-contrib-coffee": ">= 0.4.x",
+    "grunt-contrib-less": ">= 0.4.x",
+    "grunt-contrib-jade": ">= 0.4.x",
+    "grunt-contrib-watch": ">= 0.2.x",
     "grunt-reload": ">= 0.2.x",
-    "grunt-shell": "0.1.x",
+    "grunt-shell": "0.2.x",
     "mongoose": "3.5.x",
     "js-yaml": "2.0.x"
   },
   "engines": {
-    "node": ">= 0.6"
+    "node": ">= 0.8.x"
   }
 }

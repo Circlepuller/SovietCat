@@ -8,7 +8,6 @@ module.exports = (grunt) ->
           'public/js/*.js': 'src/coffee/**/*.coffee'
 
         options:
-          flatten: false
           bare: true # This is causing serious issues when set to "false"
 
     jade:
@@ -60,6 +59,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.registerTask 'server', () ->
     execServer = () ->
