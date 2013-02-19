@@ -31,7 +31,7 @@ module.exports = (grunt) ->
     uglify:
       sovietcat:
         files:
-          'public/sovietcat.min.js': ['src/sovietcat.js']
+          'public/js/sovietcat.min.js': ['public/js/sovietcat.js']
 
     reload:
       port: 6001
