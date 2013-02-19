@@ -77,5 +77,5 @@ module.exports = (grunt) ->
       else
         execServer()
 
-  grunt.registerTask 'default', 'coffee jade less reload server watch'
-  grunt.registerTask 'compile', 'coffee jade less'
+  grunt.registerTask 'default', ['coffee', 'jade', 'less', 'reload', 'server', 'watch']
+  grunt.registerTask 'compile', ['coffee', 'jade', 'less']
