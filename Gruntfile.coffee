@@ -4,6 +4,7 @@ mongoose = require 'mongoose'
 server = require './src/server/server'
 
 module.exports = (grunt) ->
+  # Make sure we can load the all-bearing configuration
   try
     config = require './config.yaml'
 
@@ -11,6 +12,7 @@ module.exports = (grunt) ->
     console.error "#{e.name}: #{e.message}"
     process.exit 1
 
+  # Now for grunt initiation
   grunt.initConfig
     coffee:
       compile:
@@ -83,6 +85,7 @@ module.exports = (grunt) ->
 
     config.__dirname = __dirname
 
+    # Connect to MongoDB
     if config.db.username and config.db.password
       db = mongoose.createConnection "mongodb://#{config.db.username}:#{config.db.password}@#{config.db.host}:#{config.db.port}/#{config.db.database}"
 
@@ -92,7 +95,8 @@ module.exports = (grunt) ->
     [http, https] = server.createServer config, db
 
     grunt.log.writeln "Running server on port #{config.http.port} and SSL port #{config.https.port}"
-    
+
+    # Start the server for HTTP and HTTPS
     http.listen(config.http.port).on 'close', done
     https.listen(config.https.port).on 'close', done
 
