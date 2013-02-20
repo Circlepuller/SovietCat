@@ -1,4 +1,4 @@
-angular.module('SovietCat', [])
+angular.module('sovietcat', [])
   .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when('/test',

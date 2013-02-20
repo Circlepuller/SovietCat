@@ -13,3 +13,9 @@ db:
   password: ''
   host: localhost
   port: 27017
+
+reload:
+  port: 6001
+  proxy:
+    host: localhost
+    port: 8001

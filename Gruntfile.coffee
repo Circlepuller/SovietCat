@@ -1,6 +1,16 @@
+require 'js-yaml'
 child_process = require 'child_process'
+mongoose = require 'mongoose'
+server = require './src/server/server'
 
 module.exports = (grunt) ->
+  try
+    config = require './config.yaml'
+
+  catch e
+    console.error "#{e.name}: #{e.message}"
+    process.exit 1
+
   grunt.initConfig
     coffee:
       compile:
@@ -34,10 +44,10 @@ module.exports = (grunt) ->
           'public/js/sovietcat.min.js': ['public/js/sovietcat.js']
 
     reload:
-      port: 6001
+      port: config.reload.port
       proxy:
-        host: 'localhost'
-        port: 8001
+        host: config.reload.proxy.host
+        port: config.reload.proxy.port
 
     watch:
       coffee:
@@ -69,20 +79,22 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.registerTask 'server', () ->
-    execServer = () ->
-      exec = 'node_modules/coffee-script/bin/coffee'
-      exec = "#{__dirname}/#{exec}.cmd" if process.platform is 'win32'
+    done = @async()
 
-      serverProc = child_process.spawn exec, ['runserver.coffee'],
-        stdio: 'inherit'
+    config.__dirname = __dirname
 
-      if serverProc?
-        console.log 'Trying to kill old server...'
-        serverProc.on 'close', execServer
-        serverProc.kill()
+    if config.db.username and config.db.password
+      db = mongoose.createConnection "mongodb://#{config.db.username}:#{config.db.password}@#{config.db.host}:#{config.db.port}/#{config.db.database}"
 
-      else
-        execServer()
+    else
+      db = mongoose.createConnection "mongodb://#{config.db.host}:#{config.db.port}/#{config.db.database}"
+
+    [http, https] = server.createServer config, db
+
+    grunt.log.writeln "Running server on port #{config.http.port} and SSL port #{config.https.port}"
+    
+    http.listen(config.http.port).on 'close', done
+    https.listen(config.https.port).on 'close', done
 
   grunt.registerTask 'default', ['coffee', 'jade', 'less', 'uglify', 'reload', 'server', 'watch']
   grunt.registerTask 'compile', ['coffee', 'jade', 'less', 'uglify']
