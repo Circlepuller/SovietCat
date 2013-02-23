@@ -50,7 +50,10 @@ module.exports = (grunt) ->
     uglify:
       sovietcat:
         files:
-          'public/js/sovietcat.min.js': ['public/js/sovietcat.js']
+          'public/js/sovietcat.min.js': [
+            'public/js/bootstrap/bootstrap-collapse.js'
+            'public/js/sovietcat.js'
+          ]
 
         options:
           mangle: false
