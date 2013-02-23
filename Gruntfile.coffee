@@ -26,6 +26,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'public/index.html': 'src/jade/index.jade'
+          'public/partials/login.html': 'src/jade/partials/login.jade'
           'public/partials/test.html': 'src/jade/partials/test.jade'
 
     less:

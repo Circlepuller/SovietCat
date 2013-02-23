@@ -1,3 +1,5 @@
 h1 This is what will be the login...
 form(ng-submit='submit()')
-  input(type='submit', value='Submit')
+  input(type='email', placeholder='Email', value='', ng-model='email')
+  input(type='password', placeholder='Password', value='', ng-model='password')
+  input(class='btn btn-primary btn-large', type='submit', value='Login')
