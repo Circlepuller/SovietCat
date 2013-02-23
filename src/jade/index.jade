@@ -2,10 +2,12 @@ doctype 5
 html(ng-app='sovietcat')
   head
     meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title SovietCat Network
     link(type='text/css', rel='stylesheet', href='css/sovietcat.min.css')
+
+  body
+    div(class='container', ng-view)
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js')
     script(type='text/javascript', src='js/sovietcat.min.js')
-
-  body(ng-view)
