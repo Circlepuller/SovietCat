@@ -1,4 +1,4 @@
-angular.module 'sovietcat', [], ($routeProvider, $locationProvider) ->
+angular.module 'sovietcat', [], ($routeProvider) ->
   $routeProvider.when '/test',
     templateUrl: 'partials/test.html'
     controller: TestCtrl
@@ -10,4 +10,4 @@ angular.module 'sovietcat', [], ($routeProvider, $locationProvider) ->
   $routeProvider.otherwise
     redirectTo: '/test'
 
-  $locationProvider.html5Mode true
+  #$locationProvider.html5Mode true
