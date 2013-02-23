@@ -51,6 +51,9 @@ module.exports = (grunt) ->
         files:
           'public/js/sovietcat.min.js': ['public/js/sovietcat.js']
 
+        options:
+          mangle: false
+
     reload:
       port: config.reload.port
       proxy:
