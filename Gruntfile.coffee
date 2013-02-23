@@ -31,11 +31,17 @@ module.exports = (grunt) ->
     less:
       development:
         files:
-          'public/css/sovietcat.css': 'src/less/**/*.less'
+          'public/css/sovietcat.css': [
+            'src/less/bootstrap/bootstrap.less'
+            'src/less/bootstrap/responsive.less'
+          ]
 
       production:
         files:
-          'public/css/sovietcat.min.css': 'src/less/**/*.less'
+          'public/css/sovietcat.min.css': [
+            'src/less/bootstrap/bootstrap.less'
+            'src/less/bootstrap/responsive.less'
+          ]
 
         options:
           compress: true
