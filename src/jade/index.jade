@@ -7,15 +7,22 @@ html(ng-app='sovietcat', ng-controller='MainCtrl')
     link(type='text/css', rel='stylesheet', href='css/sovietcat.min.css')
 
   body
-    header(class='navbar')
-      nav(class='navbar-inner')
-        a(class='brand', href='#/test') SovietCat Network
-        ul(class='nav')
-          li
-            a(href='#/test') Test
+    header(class='navbar navbar-fixed-top navbar-inverse')
+      div(class='navbar-inner')
+        div(class='container')
+          a(class='btn btn-navbar', data-toggle='collapse', data-target='.nav-collapse')
+            span(class='icon-bar')
+            span(class='icon-bar')
+            span(class='icon-bar')
 
-          li
-            a(href='#/login') Login
+          a(class='brand', href='#/test') SovietCat Network
+          nav(class='nav-collapse collapse')
+            ul(class='nav')
+              li
+                a(href='#/test') Test
+
+              li
+                a(href='#/login') Sign in
 
     div(class='container', ng-view)
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
