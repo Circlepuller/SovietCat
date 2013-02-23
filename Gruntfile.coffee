@@ -48,7 +48,7 @@ module.exports = (grunt) ->
           compress: true
 
     uglify:
-      sovietcat:
+      compile:
         files:
           'public/js/sovietcat.min.js': [
             'public/js/bootstrap/bootstrap-collapse.js'
