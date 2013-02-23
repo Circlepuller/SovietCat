@@ -2,7 +2,7 @@ MainCtrl = ($scope) ->
 
 LoginCtrl = ($scope) ->
   $scope.submit = () ->
-    alert 'LoginCtrl.submit("{{$scope.email}}", "{{$scope.password}}")'
+    alert 'LoginCtrl.submit("' + $scope.email + '", "' + $scope.password + '")'
 
 TestCtrl = ($scope) ->
   $scope.soviets = []
