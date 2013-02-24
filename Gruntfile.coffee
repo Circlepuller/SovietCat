@@ -34,6 +34,7 @@ module.exports = (grunt) ->
         files:
           'public/css/sovietcat.css': [
             'src/less/bootstrap/bootstrap.less'
+            'src/less/sovietcat.less'
             'src/less/bootstrap/responsive.less'
           ]
 
