@@ -33,7 +33,7 @@ UserSchema.path('email').validate (email) ->
 , 'Email cannot be blank'
 
 UserSchema.path('password').validate (password) ->
-  password.length and @activated
+  password.length
 , 'Password cannot be blank'
 
 mongoose.model 'User', UserSchema

@@ -29,12 +29,12 @@ module.exports.createServer = (config, db) ->
   app.use express.static "#{config.__dirname}/public"
 
   app.configure 'development', () ->
-  app.use express.errorHandler
-    dumpExceptions: true
-    showStack: true
+    app.use express.errorHandler
+      dumpExceptions: true
+      showStack: true
 
   app.configure 'production', () ->
-  app.use express.errorHandler()
+    app.use express.errorHandler()
 
   app.use app.router # routes.coffee should be created before running this file!
 

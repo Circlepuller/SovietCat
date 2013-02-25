@@ -1,19 +1,18 @@
-form(class='form-horizontal', ng-submit='submit()')
-  div(class='control-group')
-    label(class='control-label', for='email') Email
-    div(class='controls')
+form.form-horizontal(ng-submit='submit()')
+  div.control-group
+    label.control-label(for='email') Email
+    div.controls
       input(id='email', type='email', placeholder='Email', value='', ng-model='email')
 
-  div(class='control-group')
-    label(class='control-label', for='password') Password
-    div(class='controls')
+  div.control-group
+    label.control-label(for='password') Password
+    div.controls
       input(id='password', type='password', placeholder='Password', value='', ng-model='password')
 
-  div(class='control-group')
-    div(class='controls')
-      label(class='checkbox')
+  div.control-group
+    div.controls
+      label.checkbox
         input(type='checkbox', ng-model='remember')
         | Remember me
-        //- | <input type="checkbox" ng-model="remember" /> Remember me
 
-      input(class='btn btn-primary btn-large', type='submit', value='Sign in')
+      input.btn.btn-primary.btn-large(type='submit', value='Sign in')
