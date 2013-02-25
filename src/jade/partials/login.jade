@@ -2,12 +2,12 @@ form.form-horizontal(ng-submit='submit()')
   div.control-group
     label.control-label(for='email') Email
     div.controls
-      input(id='email', type='email', placeholder='Email', value='', ng-model='email')
+      input(id='email', type='email', placeholder='Email', value='', ng-model='email', required)
 
   div.control-group
     label.control-label(for='password') Password
     div.controls
-      input(id='password', type='password', placeholder='Password', value='', ng-model='password')
+      input(id='password', type='password', placeholder='Password', value='', ng-model='password', required)
 
   div.control-group
     div.controls

@@ -6,7 +6,15 @@ LoginCtrl = ($scope) ->
     password = if $scope.password? then $scope.password else ''
     remember = if $scope.remember? then $scope.remember else false
 
-    alert "LoginCtrl.submit(\"#{email}\", \"#{password}\", \"#{remember.toString()}\")"
+    $.getJSON '/api/login',
+      email: email
+      password: password
+      remember: remember
+
+      (res) ->
+        alert JSON.stringify res
+
+    #alert "LoginCtrl.submit(\"#{email}\", \"#{password}\", \"#{remember.toString()}\")"
 
 TestCtrl = ($scope) ->
   $scope.soviets = []
