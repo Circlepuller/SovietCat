@@ -11,4 +11,4 @@ angular.module 'sovietcat', [], ($routeProvider, $locationProvider) ->
     redirectTo: '/test'
 
   # Enable this when everything's setup
-  $locationProvider.html5Mode true
+  #$locationProvider.html5Mode true

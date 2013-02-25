@@ -2,6 +2,7 @@ express = require 'express'
 fs = require 'fs'
 http = require 'http'
 https = require 'https'
+routes = require './routes'
 
 module.exports.createServer = (config, db) ->
   app = express()
@@ -37,6 +38,8 @@ module.exports.createServer = (config, db) ->
     app.use express.errorHandler()
 
   app.use app.router # routes.coffee should be created before running this file!
+
+  routes app
 
   return [
     http.createServer app
