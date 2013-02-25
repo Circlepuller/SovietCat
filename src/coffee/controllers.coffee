@@ -6,7 +6,7 @@ LoginCtrl = ($scope) ->
     password = if $scope.password? then $scope.password else ''
     remember = if $scope.remember? then $scope.remember else false
 
-    alert 'LoginCtrl.submit("#{email}", "#{password}", "#{remember.toString()}")'
+    alert "LoginCtrl.submit(\"#{email}\", \"#{password}\", \"#{remember.toString()}\")"
 
 TestCtrl = ($scope) ->
   $scope.soviets = []
