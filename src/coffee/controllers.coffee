@@ -6,6 +6,8 @@ LoginCtrl = ($scope) ->
     password = if $scope.password? then $scope.password else ''
     remember = if $scope.remember? then $scope.remember else false
 
+    alert document.cookie
+
     $.ajax '/api/login',
       type: 'POST'
       cache: false
@@ -14,7 +16,7 @@ LoginCtrl = ($scope) ->
         email: email
         password: password
         remember: remember
-        
+
       success: (data) ->
         alert JSON.stringify data
 
