@@ -1,3 +1,3 @@
 module.exports = (app) ->
-  app.get '*', (req, res) ->
-    res.redirect '/'
+  app.get '/:page', (req, res) ->
+    res.redirect "/##{req.params.page}"
